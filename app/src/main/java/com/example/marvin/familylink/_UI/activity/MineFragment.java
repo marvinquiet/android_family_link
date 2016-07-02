@@ -1,100 +1,71 @@
-//package com.example.marvin.familylink._UI.activity;
-//
-//import android.content.Context;
-//import android.content.Intent;
-//import android.os.AsyncTask;
-//import android.os.Bundle;
-//import android.support.annotation.Nullable;
-//import android.support.v4.app.Fragment;
-//import android.view.LayoutInflater;
-//import android.view.View;
-//import android.view.ViewGroup;
-//import android.widget.AdapterView;
-//import android.widget.ListView;
-//
-//import com.example.marvin.familylink.R;
-//import com.example.marvin.familylink._UI._Utils.BLog;
-//import com.example.marvin.familylink._UI._Utils.Constants;
-//import com.example.marvin.familylink._UI._Utils.Utils;
+package com.example.marvin.familylink._UI.activity;
+
+import android.content.Context;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ListView;
+
+import com.example.marvin.familylink.R;
+import com.example.marvin.familylink._UI._Utils.BLog;
 //import com.example.marvin.familylink._UI.adapter.FriendAdapter;
-//import com.example.marvin.familylink._UI.adapter.FunctionInfoAdapter;
-//
-//import java.io.IOException;
-//
-//
-///**
-// * Created by mawenjing on 15/5/18.
-// */
-//
-//// TODO view layer code should be placed under a same parent, like /view/fragment/ /view/activity/ /view/component/
-//public class MineFragment extends Fragment {
-//    private static Context context;
-//
-//    private ListView mFriendList;
+
+
+/**
+ * Created by mawenjing on 15/5/18.
+ */
+
+// TODO view layer code should be placed under a same parent, like /view/fragment/ /view/activity/ /view/component/
+public class MineFragment extends Fragment {
+    private static Context context;
+
+    private ListView mFriendList;
 //    private FriendAdapter mAdapter;
-//
-//    private ListView mFunctionList;
-//    private FunctionInfoAdapter mFunctionAdapter;
-//
-//    private List<AVUser> userList;
-//    private FileCache fileCache;
-//
-//    public MineFragment() {
-//    }
-//
-//    public static MineFragment newInstance() {
-//        MineFragment mineFragment = new MineFragment();
-//        return mineFragment;
-//    }
-//
-//    // Fetch file cache and show
-//    @Override
-//    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-//        if (BLog.logEnable == true) {
-//            BLog.d("### Friend Fragment onCreateView");
-//        }
-//
-//        View view = inflater.inflate(R.layout.fragment_friend, null);
-//        context = getActivity();
-//
+
+    public MineFragment() {
+    }
+
+    public static MineFragment newInstance() {
+        MineFragment mineFragment = new MineFragment();
+        return mineFragment;
+    }
+
+    // Fetch file cache and show
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        if (BLog.logEnable == true) {
+            BLog.d("### Friend Fragment onCreateView");
+        }
+
+        View view = inflater.inflate(R.layout.fragment_mine, null);
+        context = getActivity();
+
 //        mFunctionList = (ListView) view.findViewById(R.id.list_function);
 //        mFriendList = (ListView) view.findViewById(R.id.list_friend);
 //
 //        userList = new ArrayList<AVUser>();
 //        mAdapter = new FriendAdapter(context, userList);
-//
-//        return view;
-//    }
-//
-//    // Do some refresh work
-//    @Override
-//    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-//        super.onActivityCreated(savedInstanceState);
-//    }
-//
-//    @Override
-//    public void onResume() {
-//        super.onResume();
-//
-//        if (BLog.logEnable == true) {
-//            BLog.d("###Friend fragment on resume.");
-//        }
-//
-//        try {
-//            fileCache = FileCache.getFileCache(context);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//
-//
-//        List<AVUser> recommendFriendList = new ArrayList<AVUser>();
-//        List<AVUser> receivingRequestList = new ArrayList<AVUser>();
-//        List<AVUser> friendList = new ArrayList<AVUser>();
-//
-//        friendList = (List<AVUser>) Utils.memoryCache.get(Constants.FRIEND_MEMORY_KEY);
-//        if (friendList == null) {
-//            friendList = fileCache.readUserObject(Constants.FRIEND_MEMORY_KEY);
-//        }
+
+        return view;
+    }
+
+    // Do some refresh work
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        if (BLog.logEnable == true) {
+            BLog.d("###Friend fragment on resume.");
+        }
+
 //
 //        recommendFriendList = Utils.readUserMemoryThenFile(context, Constants.RECOMMEND_FRIEND_MEMORY_KEY, Constants.EVENT_REQUEST);
 //        receivingRequestList = Utils.readUserMemoryThenFile(context, Constants.RECEIVING_REQUEST_KEY, Constants.EVENT_ACCPET);
@@ -102,8 +73,8 @@
 //        setFriendListView(friendList);
 //        setFunctionListView(receivingRequestList, recommendFriendList);
 //        refresh();
-//    }
-//
+    }
+
 //    class GetFriendsNumTask extends AsyncTask<Void, Void, List<List<AVUser>>> {
 //        @Override
 //        protected List<List<AVUser>> doInBackground(Void... params) {
@@ -163,10 +134,10 @@
 //            setFunctionListView(getRequestList, getRecommendList);
 //        }
 //    }
-//
-//    /**
-//     * Use {@link FriendAdapter} to adapt friend ListView
-//     */
+
+    /**
+     * Use {@link FriendAdapter} to adapt friend ListView
+     */
 //    private void setFriendListView(List<AVUser> friendList) {
 //        if (friendList != null && friendList.size() != 0) {
 //            userList.clear();
@@ -190,11 +161,11 @@
 //            });
 //        }
 //    }
-//
-//    /**
-//     * FriendRequest or RecommendFriend
-//     *
-//     */
+
+    /**
+     * FriendRequest or RecommendFriend
+     *
+     */
 //    private void setFunctionListView(List<AVUser> requestList, List<AVUser> recommendList) {
 //        if (context != null) {
 //            if (requestList != null && requestList.size() != 0) {
@@ -219,8 +190,8 @@
 //        }
 //
 //    }
-//
-//
+
+
 //    @Override
 //    public void onStart() {
 //        super.onStart();
@@ -232,7 +203,7 @@
 //        EventBus.getDefault().unregister(this);
 //        super.onStop();
 //    }
-//
+
 //    public void onEvent(RefreshFriendEvent event) {
 //        refresh();
 //    }
@@ -253,5 +224,5 @@
 //            Utils.showConnectionNADialog(context);
 //        }
 //    }
-//
-//}
+
+}

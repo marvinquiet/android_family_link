@@ -1,3 +1,52 @@
 <resources>
-    <string name="app_name">Family Link</string>
+    <string name="app_name">FamiLink</string>
+    <string name="title_task_detail">Task Detail</string>
+
+    <string name="push_string">Push Message!</string>
+    <string name="installation_string">Installation ID is:</string>
+
+    <string name="enter_username">输入用户名</string>
+    <string name="enter_password">输入密码</string>
+    <string name="enter_signup">注册</string>
+    <string name="enter_login">登录</string>
+    <string name="enter_wechat_login">使用微信号登录</string>
+
+
+    <string name="choose_friend">选择朋友</string>
+    <string name="input_ask_message">问个问题？</string>
+
+    <string name="add_friend">手机号</string>
+
+    <string name="start_description">让生活变得简单！</string>
+    <string name="start_hint_signin"><u>已有账户？</u></string>
+    <string name="start_signup">注册</string>
+
+    <string name="signin_hint_name">请输入手机号</string>
+    <string name="signin_hint_password">密码</string>
+    <string name="signin_button">登录</string>
+    <string name="signin_forget_password"><u>忘记密码？</u></string>
+
+    <string name="signup_phone">请输入手机号</string>
+    <string name="signup_code">验证码</string>
+    <string name="signup_confirmcode">验证</string>
+    <string name="signup_sendcode">发送验证码</string>
+    <string name="signup_nickname">用户名（必填）</string>
+    <string name="signup_password">密码</string>
+    <string name="signup_confirmpwd">确认密码</string>
+    <string name="signup_button">注册完成</string>
+
+
+    <string name="finish_picking_button">发送</string>
+
+    <string name="menu_personal_info">个人信息</string>
+    <string name="menu_senz_info">Senz信息</string>
+    <string name="menu_log_out">登出</string>
+
+    <string name="personal_profile">个人信息</string>
+    <string name="profile_photo">头像</string>
+    <string name="nickname">昵称</string>
+    <string name="phone_number">手机号</string>
+    <string name="modify_name">修改昵称</string>
+    <string name="modify_negative">取消</string>
+    <string name="modify_positive">保存</string>
 </resources>

@@ -1,11 +1,179 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+
+
+    <!-- Style for Content ******************************************************-->
+
+    <!--&lt;!&ndash;Style for Content View&ndash;&gt;-->
+    <!--<style name="card.content_outer_layout">-->
+        <!--<item name="android:layout_width">match_parent</item>-->
+        <!--<item name="android:minHeight">@dimen/card_base_empty_height</item>-->
+        <!--<item name="android:layout_marginTop">@dimen/card_content_outer_view_margin_top</item>-->
+        <!--<item name="android:layout_marginBottom">@dimen/card_content_outer_view_margin_bottom</item>-->
+        <!--<item name="android:layout_marginLeft">@dimen/card_content_outer_view_margin_left</item>-->
+        <!--<item name="android:layout_marginRight">@dimen/card_content_outer_view_margin_right</item>-->
+    <!--</style>-->
+
+    <!--&lt;!&ndash;Style for Content View&ndash;&gt;-->
+    <!--<style name="card.native.content_outer_layout" >-->
+        <!--<item name="android:layout_width">match_parent</item>-->
+        <!--<item name="android:minHeight">@dimen/card_base_empty_height</item>-->
+        <!--<item name="android:paddingLeft">@dimen/card_main_content_native_default_paddingLeft</item>-->
+        <!--<item name="android:paddingRight">@dimen/card_main_content_native_default_paddingRight</item>-->
+        <!--<item name="android:paddingTop">@dimen/card_main_content_native_default_paddingTop</item>-->
+        <!--<item name="android:paddingBottom">@dimen/card_main_content_native_default_paddingBottom</item>-->
+    <!--</style>-->
+
+    <!--&lt;!&ndash;Style for simple title inner main view&ndash;&gt;-->
+    <!--<style name="card.base_simple_title">-->
+        <!--<item name="android:textStyle">bold</item>-->
+        <!--<item name="android:layout_gravity">left|center_vertical</item>-->
+        <!--<item name="android:layout_marginLeft">@dimen/card_main_simple_title_margin_left</item>-->
+        <!--<item name="android:layout_marginTop">@dimen/card_main_simple_title_margin_top</item>-->
+        <!--<item name="android:layout_marginRight">@dimen/card_main_simple_title_margin_right</item>-->
+        <!--<item name="android:layout_marginBottom">@dimen/card_main_simple_title_margin_bottom</item>-->
+    <!--</style>-->
+
+    <!--&lt;!&ndash;Style for simple title inner main view&ndash;&gt;-->
+    <!--<style name="card.native.base_simple_title">-->
+        <!--<item name="android:textStyle">bold</item>-->
+        <!--<item name="android:textSize">@dimen/card_main_content_native_simple_title_text_size</item>-->
+        <!--<item name="android:layout_gravity">left|center_vertical</item>-->
+        <!--<item name="android:layout_marginLeft">@dimen/card_main_native_simple_title_margin_left</item>-->
+        <!--<item name="android:layout_marginTop">@dimen/card_main_native_simple_title_margin_top</item>-->
+    <!--</style>-->
+
+    <!--&lt;!&ndash; Style for Main Layout ****************************************&ndash;&gt;-->
+
+    <!--&lt;!&ndash; Style for Main Layout&ndash;&gt;-->
+    <!--<style name="card.main_layout">-->
+        <!--<item name="android:background">@drawable/card_selector</item>-->
+        <!--<item name="android:layout_marginTop">@dimen/card_main_layout_view_margin_top</item>-->
+        <!--<item name="android:layout_marginBottom">@dimen/card_main_layout_view_margin_bottom</item>-->
+        <!--<item name="android:layout_marginLeft">@dimen/card_main_layout_view_margin_left</item>-->
+        <!--<item name="android:layout_marginRight">@dimen/card_main_layout_view_margin_right</item>-->
+    <!--</style>-->
+
+    <!--&lt;!&ndash; Style for Main Layout kitkat&ndash;&gt;-->
+    <!--<style name="card.main_layout.kitkat">-->
+        <!--<item name="android:background">@drawable/card_kitkat_selector</item>-->
+    <!--</style>-->
+
+    <!--<style name="card.native.main_layout" >-->
+        <!--<item name="android:background">?android:selectableItemBackground</item>-->
+        <!--<item name="android:layout_marginTop">@dimen/card_main_layout_native_view_margin_top</item>-->
+        <!--<item name="android:layout_marginBottom">@dimen/card_main_layout_native_view_margin_bottom</item>-->
+        <!--<item name="android:layout_marginLeft">@dimen/card_main_layout_native_view_margin_left</item>-->
+        <!--<item name="android:layout_marginRight">@dimen/card_main_layout_native_view_margin_right</item>-->
+    <!--</style>-->
+
+    <!--&lt;!&ndash; Style for Main Layout with foreground selector&ndash;&gt;-->
+    <!--<style name="card.main_layout_foreground">-->
+        <!--<item name="android:background">@drawable/card_background</item>-->
+        <!--<item name="android:foreground">@drawable/card_foreground_selector</item>-->
+        <!--<item name="android:layout_marginTop">@dimen/card_main_layout_view_margin_top</item>-->
+        <!--<item name="android:layout_marginBottom">@dimen/card_main_layout_view_margin_bottom</item>-->
+        <!--<item name="android:layout_marginLeft">@dimen/card_main_layout_view_margin_left</item>-->
+        <!--<item name="android:layout_marginRight">@dimen/card_main_layout_view_margin_right</item>-->
+    <!--</style>-->
+
+    <!--&lt;!&ndash; Style for Main Layout with foreground selector kitkat&ndash;&gt;-->
+    <!--<style name="card.main_layout_foreground.kitkat">-->
+        <!--<item name="android:foreground">@drawable/card_foreground_kitkat_selector</item>-->
+    <!--</style>-->
+
+    <!--<style name="card.native.main_layout_foreground">-->
+        <!--<item name="android:foreground">?android:selectableItemBackground</item>-->
+        <!--<item name="android:background">@color/card_native_background</item>-->
+        <!--<item name="android:layout_marginTop">@dimen/card_main_layout_native_view_margin_top</item>-->
+        <!--<item name="android:layout_marginBottom">@dimen/card_main_layout_native_view_margin_bottom</item>-->
+        <!--<item name="android:layout_marginLeft">@dimen/card_main_layout_native_view_margin_left</item>-->
+        <!--<item name="android:layout_marginRight">@dimen/card_main_layout_native_view_margin_right</item>-->
+    <!--</style>-->
+
+
+    <!--&lt;!&ndash; Style for Thumbnail ******************************************************&ndash;&gt;-->
+
+    <!--<style name="card_thumbnail_image">-->
+        <!--<item name="android:layout_width">@dimen/card_thumbnail_width</item>-->
+        <!--<item name="android:layout_height">@dimen/card_thumbnail_height</item>-->
+        <!--<item name="android:layout_gravity">center</item>-->
+        <!--<item name="android:gravity">center</item>-->
+        <!--<item name="android:scaleType">centerCrop</item>-->
+    <!--</style>-->
+
+    <!--<style name="card_thumbnail_outer_layout">-->
+        <!--<item name="android:layout_width">wrap_content</item>-->
+        <!--<item name="android:layout_height">wrap_content</item>-->
+    <!--</style>-->
+
+    <!--<style name="card.thumbnail_compound_view"></style>-->
+
+    <!--<style name="card.native.card_thumbnail_image">-->
+        <!--<item name="android:layout_width">@dimen/card_thumbnail_width</item>-->
+        <!--<item name="android:layout_height">@dimen/card_thumbnail_height</item>-->
+        <!--<item name="android:layout_gravity">center</item>-->
+        <!--<item name="android:gravity">center</item>-->
+        <!--<item name="android:scaleType">centerCrop</item>-->
+    <!--</style>-->
+
+    <!--<style name="card.native.card_thumbnail_outer_layout">-->
+        <!--<item name="android:layout_width">wrap_content</item>-->
+        <!--<item name="android:layout_height">wrap_content</item>-->
+    <!--</style>-->
+
+    <!--<style name="card.native.thumbnail_compound_view">-->
+
+    <!--</style>-->
+
+
+    <!-- Style for Lists ******************************************************-->
+
+    <style name="list_card">
+        <item name="android:paddingLeft">@dimen/list_card_padding_left</item>
+        <item name="android:paddingRight">@dimen/list_card_padding_right</item>
+        <item name="android:paddingBottom">@dimen/list_card_padding_bottom</item>
+        <item name="android:paddingTop">@dimen/list_card_padding_top</item>
+    </style>
+
+    <!-- Base list -->
+    <style name="list_card.base">
+
+    </style>
+
+
+    <!-- Thumbnail list -->
+    <style name="list_card.thumbnail">
+
+    </style>
+
+
+    <style name="native_list_external">
+        <item name="android:clipToPadding">false</item>
+        <item name="android:scrollbarStyle">outsideOverlay</item>
+    </style>
+
+    <style name="native_list_card">
+        <item name="android:layout_marginLeft">@dimen/native_list_card_margin_left</item>
+        <item name="android:layout_marginRight">@dimen/native_list_card_margin_right</item>
+        <item name="android:layout_marginBottom">@dimen/native_list_card_margin_bottom</item>
+        <item name="android:layout_marginTop">@dimen/native_list_card_margin_top</item>
+    </style>
+
+    <!-- Base list -->
+    <style name="native_list_card.base" >
+
+    </style>
+
+
+    <!-- Thumbnail list -->
+    <style name="native_list_card.thumbnail">
+
     </style>
 
 </resources>

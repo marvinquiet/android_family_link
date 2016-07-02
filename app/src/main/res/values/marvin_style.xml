@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- divider style -->
+    <style name="ViewStyle" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/md_grey_300</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingRight">20dp</item>
+    </style>
+
+
+    <!--  user list style -->
+    <style name="ListStyle" >
+        <item name="android:layout_height">48dp</item>
+    </style>
+
+    <style name="ListTextStyle">
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">20dp</item>
+        <item name="android:paddingLeft">72dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+
+    <!-- Send message dialog style -->
+    <style name="DialogStyle" >
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+    </style>
+
+    <style name="DialogTextStyle" parent="DialogStyle">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:layout_marginTop">2dp</item>
+    </style>
+
+    <!-- input information edittext style -->
+    <style name="EdittextStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_marginLeft">15dp</item>
+        <item name="android:layout_marginRight">15dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:maxLength">20</item>
+    </style>
+
+    <!-- personal profile relativelayout style -->
+    <style name="PersonalProfileDisplayStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingRight">20dp</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="PersonalProfileDiscription">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+
+</resources>

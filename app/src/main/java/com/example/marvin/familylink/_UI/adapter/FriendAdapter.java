@@ -9,15 +9,10 @@
 //import android.widget.ImageView;
 //import android.widget.TextView;
 //
-//import com.avos.avoscloud.AVUser;
+//import com.example.marvin.familylink.R;
+//import com.example.marvin.familylink._UI._Utils.Utils;
 //
 //import java.io.IOException;
-//import java.util.ArrayList;
-//import java.util.List;
-//
-//import io.petchat._Utils.Utils;
-//import io.petchat.cache.FileCache;
-//import io.petchat.yochat.R;
 //
 ///**
 // * Created by marvin on 15/7/14.
@@ -25,17 +20,14 @@
 //public class FriendAdapter extends BaseAdapter {
 //    private Context mContext;
 //    private LayoutInflater inflater;
-//    private List<AVUser> userList = new ArrayList<AVUser>();
 //    private FriendSelectHolder holder;
 //
-//    private FileCache fileCache;
-//
 //    // Provide a suitable constructor (depends on the kind of dataset)
-//    public FriendAdapter(Context mContext, List<AVUser> userList) {
-//        this.mContext = mContext;
-//        this.userList = userList;
-//        inflater = LayoutInflater.from(mContext);
-//    }
+////    public FriendAdapter(Context mContext, List<AVUser> userList) {
+////        this.mContext = mContext;
+////        this.userList = userList;
+////        inflater = LayoutInflater.from(mContext);
+////    }
 //
 //    public class FriendSelectHolder {
 //        public TextView mName;

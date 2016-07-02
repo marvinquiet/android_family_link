@@ -1,86 +1,68 @@
-//package com.example.marvin.familylink._UI.activity;
-//
-//
-//import android.content.Context;
-//import android.graphics.Bitmap;
-//import android.os.AsyncTask;
-//import android.os.Bundle;
-//import android.os.Handler;
-//import android.support.annotation.Nullable;
-//import android.support.v4.app.Fragment;
-//import android.support.v4.widget.SwipeRefreshLayout;
-//import android.view.LayoutInflater;
-//import android.view.View;
-//import android.view.ViewGroup;
-//import android.widget.TextView;
-//
-//import com.avos.avoscloud.AVUser;
-//import com.example.marvin.familylink.R;
-//import com.example.marvin.familylink._UI._Utils.BLog;
-//import com.example.marvin.familylink._UI._Utils.Constants;
-//import com.example.marvin.familylink._UI._Utils.Utils;
-//
-//import org.json.JSONException;
-//import org.json.JSONObject;
-//
-//import java.io.IOException;
-//import java.util.ArrayList;
-//import java.util.HashMap;
-//import java.util.Iterator;
-//import java.util.List;
-//import java.util.Map;
-//
-//
-///**
-// * Created by mawenjing on 15/5/18.
-// */
-//public class FamilyFragment extends Fragment {
-//    private static Context context;
-//
-//    public FamilyFragment() {
-//    }
-//
-//    public static Fragment newInstance() {
-//        FamilyFragment familyFragment = new FamilyFragment();
-//        return familyFragment;
-//    }
-//
-//    private boolean isFirstLogin = false;
-//
-//    // CardType Constants
-//    private final static int CARDTYPE_NUM = 2;
-//    private final static int CARDTYPE_1 = 0;
-//    private final static int CARDTYPE_2 = 1;
-//
-//
-//    // Fetch file cache and show
-//    @Override
-//    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-//        if (BLog.logEnable == true) {
-//            BLog.d("### Task Fragment onCreateView");
-//        }
-//
-//        View view = inflater.inflate(R.layout.fragment_task, null);
-//
-//        context = getActivity();
-//
-//        return view;
-//    }
-//
-//    // Do some refresh work
-//    @Override
-//    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-//        super.onActivityCreated(savedInstanceState);
-//    }
-//
-//    @Override
-//    public void onResume() {
-//        super.onResume();
-//
-//        if (BLog.logEnable == true) {
-//            BLog.d("###Task Fragment On Resume");
-//        }
-//
+package com.example.marvin.familylink._UI.activity;
+
+
+import android.content.Context;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import com.example.marvin.familylink.R;
+import com.example.marvin.familylink._UI._Utils.BLog;
+
+
+/**
+ * Created by mawenjing on 15/5/18.
+ */
+public class FamilyFragment extends Fragment {
+    private static Context context;
+
+    public FamilyFragment() {
+    }
+
+    public static Fragment newInstance() {
+        FamilyFragment familyFragment = new FamilyFragment();
+        return familyFragment;
+    }
+
+    private boolean isFirstLogin = false;
+
+    // CardType Constants
+    private final static int CARDTYPE_NUM = 2;
+    private final static int CARDTYPE_1 = 0;
+    private final static int CARDTYPE_2 = 1;
+
+
+    // Fetch file cache and show
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        if (BLog.logEnable == true) {
+            BLog.d("### Task Fragment onCreateView");
+        }
+
+        View view = inflater.inflate(R.layout.fragment_family, null);
+
+        context = getActivity();
+
+        return view;
+    }
+
+    // Do some refresh work
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        if (BLog.logEnable == true) {
+            BLog.d("###Task Fragment On Resume");
+        }
+
 //        isFirstLogin = Constants.SP.getBoolean(Constants.USER_FIRST_LOGIN, false);
 //
 //        try {
@@ -95,8 +77,8 @@
 //
 //        refresh();
 //        setSwipeLayoutRefresh(true);
-//    }
-//
+    }
+
 //    private List<Card> initQuestionCard(List<Task> tasks) {
 //        List<Card> questionCards = new ArrayList<Card>();
 //        if (tasks != null) {
@@ -225,7 +207,7 @@
 //
 //        return taskAnswers;
 //    }
-//
+
 //    // Fragment Refresh
 //    @Override
 //    public void onRefresh() {
@@ -237,7 +219,7 @@
 //            }
 //        });
 //    }
-//
+
 //    // set the action that swipe layout doing right now
 //    private void setSwipeLayoutRefresh(boolean value) {
 //        if (value == true) {
@@ -256,7 +238,7 @@
 //            });
 //        }
 //    }
-//
+
 //    class GetCardTask extends AsyncTask<Void, Void, Void> {
 //        @Override
 //        protected Void doInBackground(Void... params) {
@@ -325,6 +307,6 @@
 //            Utils.showConnectionNADialog(context);
 //        }
 //    }
-//
-//
-//}
+
+
+}
