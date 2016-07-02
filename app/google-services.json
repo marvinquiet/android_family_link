@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "510255778143",
+    "firebase_url": "https://familyshare-211bb.firebaseio.com",
+    "project_id": "familyshare-211bb",
+    "storage_bucket": "familyshare-211bb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:510255778143:android:a53a9e7f43c9f6cd",
+        "android_client_info": {
+          "package_name": "com.example.marvin.familylink"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "510255778143-eeis26sd00apesa3el8i10shnkhnf3lg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.marvin.familylink",
+            "certificate_hash": "A965BB03BB2F4CE69891A9057E0362F69BBBADF1"
+          }
+        },
+        {
+          "client_id": "510255778143-0dt5pissn027p2innevfjc5cd35n2gog.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBikZbq0S0_bTywzQ29xtjySg_4pNFZGCQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "510255778143-0dt5pissn027p2innevfjc5cd35n2gog.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
