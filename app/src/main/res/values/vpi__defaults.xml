@@ -25,8 +25,8 @@
     <color name="default_title_indicator_selected_color">#FF000000</color>
     <bool name="default_title_indicator_selected_bold">true</bool>
     <color name="default_title_indicator_text_color">#BB000000</color>
-    <dimen name="default_title_indicator_text_size">15sp</dimen>
-    <dimen name="default_title_indicator_title_padding">5dp</dimen>
-    <dimen name="default_title_indicator_top_padding">7dp</dimen>
+    <dimen name="default_title_indicator_text_size">25sp</dimen>
+    <dimen name="default_title_indicator_title_padding">10dp</dimen>
+    <dimen name="default_title_indicator_top_padding">10dp</dimen>
 
 </resources>

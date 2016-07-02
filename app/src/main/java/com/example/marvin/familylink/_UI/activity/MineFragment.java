@@ -11,7 +11,11 @@ import android.widget.ListView;
 
 import com.example.marvin.familylink.R;
 import com.example.marvin.familylink._UI._Utils.BLog;
-//import com.example.marvin.familylink._UI.adapter.FriendAdapter;
+import com.example.marvin.familylink._UI.adapter.InfoAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
+//import com.example.marvin.familylink._UI.adapter.InfoAdapter;
 
 
 /**
@@ -23,7 +27,7 @@ public class MineFragment extends Fragment {
     private static Context context;
 
     private ListView mFriendList;
-//    private FriendAdapter mAdapter;
+    private InfoAdapter mAdapter;
 
     public MineFragment() {
     }
@@ -42,12 +46,10 @@ public class MineFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_mine, null);
         context = getActivity();
+        mFriendList = (ListView) view.findViewById(R.id.list_friend);
 
-//        mFunctionList = (ListView) view.findViewById(R.id.list_function);
-//        mFriendList = (ListView) view.findViewById(R.id.list_friend);
-//
-//        userList = new ArrayList<AVUser>();
-//        mAdapter = new FriendAdapter(context, userList);
+        List<String> userList = new ArrayList<String>();
+        mAdapter = new InfoAdapter(context, userList);
 
         return view;
     }
@@ -61,10 +63,13 @@ public class MineFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-
         if (BLog.logEnable == true) {
             BLog.d("###Friend fragment on resume.");
         }
+
+
+
+
 
 //
 //        recommendFriendList = Utils.readUserMemoryThenFile(context, Constants.RECOMMEND_FRIEND_MEMORY_KEY, Constants.EVENT_REQUEST);
@@ -136,7 +141,7 @@ public class MineFragment extends Fragment {
 //    }
 
     /**
-     * Use {@link FriendAdapter} to adapt friend ListView
+     * Use {@link InfoAdapter} to adapt friend ListView
      */
 //    private void setFriendListView(List<AVUser> friendList) {
 //        if (friendList != null && friendList.size() != 0) {

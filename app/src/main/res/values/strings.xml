@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">FamiLink</string>
     <string name="title_task_detail">Task Detail</string>
+    <string name="user_name">Marvin\nThis is my personal description.</string>
 
     <string name="push_string">Push Message!</string>
     <string name="installation_string">Installation ID is:</string>

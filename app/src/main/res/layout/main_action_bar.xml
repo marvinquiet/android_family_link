@@ -7,16 +7,15 @@
         android:id="@+id/yochat_icon"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginLeft="8dp"
         android:background="@drawable/familink_logo"
-        android:layout_centerVertical="true"
-        android:visibility="gone"/>
+        android:layout_centerVertical="true" />
 
     <TextView
         android:id="@+id/yochat_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/yochat_icon"
+        android:layout_marginLeft="10dp"
         android:layout_centerVertical="true"
         android:textSize="20sp"
         />

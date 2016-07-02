@@ -1,5 +1,7 @@
 package com.example.marvin.familylink._UI.activity;
 
+import android.animation.ObjectAnimator;
+import android.animation.PropertyValuesHolder;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -12,18 +14,20 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.SubMenu;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.marvin.familylink.R;
 import com.example.marvin.familylink._UI.adapter.MainFragmentAdapter;
 import com.example.marvin.familylink._UI.pager.CirclePageIndicator;
-import com.melnykov.fab.FloatingActionButton;
+import com.example.marvin.familylink._UI.adapter.FloatingActionButton;
+import com.oguzdev.circularfloatingactionmenu.library.FloatingActionMenu;
+import com.oguzdev.circularfloatingactionmenu.library.SubActionButton;
 
 public class MainActivity extends ActionBarActivity {
     private Context context = MainActivity.this;
     private FragmentPagerAdapter adapter;
     private View mainActionBarView;
-    private FloatingActionButton floatingActionButton;
     private final static int FRIEND_ITEM = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,8 +46,56 @@ public class MainActivity extends ActionBarActivity {
         CirclePageIndicator indicator = (CirclePageIndicator) findViewById(R.id.indicator);
         indicator.setViewPager(viewPager);
 
-        floatingActionButton =
-                (FloatingActionButton) findViewById(R.id.button_floating_action);
+        // The floating button part
+        final ImageView fabIconNew = new ImageView(this);
+        fabIconNew.setImageDrawable(getResources().getDrawable(R.drawable.ic_action_new_light));
+        final FloatingActionButton rightLowerButton = new FloatingActionButton.Builder(this)
+                .setContentView(fabIconNew)
+                .setPosition(FloatingActionButton.POSITION_BOTTOM_RIGHT)
+                .build();
+
+        SubActionButton.Builder rLSubBuilder = new SubActionButton.Builder(this);
+        ImageView rlIcon1 = new ImageView(this);
+        ImageView rlIcon2 = new ImageView(this);
+        ImageView rlIcon3 = new ImageView(this);
+        ImageView rlIcon4 = new ImageView(this);
+
+        rlIcon1.setImageDrawable(getResources().getDrawable(R.drawable.ic_action_chat_light));
+        rlIcon2.setImageDrawable(getResources().getDrawable(R.drawable.ic_action_camera_light));
+        rlIcon3.setImageDrawable(getResources().getDrawable(R.drawable.ic_action_video_light));
+        rlIcon4.setImageDrawable(getResources().getDrawable(R.drawable.ic_action_place_light));
+
+        // Build the menu with default options: light theme, 90 degrees, 72dp radius.
+        // Set 4 default SubActionButtons
+        final FloatingActionMenu rightLowerMenu = new FloatingActionMenu.Builder(this)
+                .addSubActionView(rLSubBuilder.setContentView(rlIcon1).build())
+                .addSubActionView(rLSubBuilder.setContentView(rlIcon2).build())
+                .addSubActionView(rLSubBuilder.setContentView(rlIcon3).build())
+                .addSubActionView(rLSubBuilder.setContentView(rlIcon4).build())
+                .attachTo(rightLowerButton)
+                .build();
+
+        // Listen menu open and close events to animate the button content view
+        rightLowerMenu.setStateChangeListener(new FloatingActionMenu.MenuStateChangeListener() {
+            @Override
+            public void onMenuOpened(FloatingActionMenu menu) {
+                // Rotate the icon of rightLowerButton 45 degrees clockwise
+                fabIconNew.setRotation(0);
+                PropertyValuesHolder pvhR = PropertyValuesHolder.ofFloat(View.ROTATION, 45);
+                ObjectAnimator animation = ObjectAnimator.ofPropertyValuesHolder(fabIconNew, pvhR);
+                animation.start();
+            }
+
+            @Override
+            public void onMenuClosed(FloatingActionMenu menu) {
+                // Rotate the icon of rightLowerButton 45 degrees counter-clockwise
+                fabIconNew.setRotation(45);
+                PropertyValuesHolder pvhR = PropertyValuesHolder.ofFloat(View.ROTATION, 0);
+                ObjectAnimator animation = ObjectAnimator.ofPropertyValuesHolder(fabIconNew, pvhR);
+                animation.start();
+            }
+        });
+
 
     }
 
@@ -65,11 +117,16 @@ public class MainActivity extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Add Friend Button.
-        SubMenu addFriendMenu = menu.addSubMenu(Menu.NONE, FRIEND_ITEM, Menu.NONE, "");
+        SubMenu addFriendMenu = menu.addSubMenu(Menu.NONE, 0, Menu.NONE, "");
+        SubMenu logOutMenu = menu.addSubMenu(Menu.NONE, 1, Menu.NONE, "");
 
         MenuItem addFriendItem = addFriendMenu.getItem();
         addFriendItem.setIcon(R.drawable.ic_search);
         addFriendItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+
+        MenuItem logOutItem = logOutMenu.getItem();
+        logOutItem.setIcon(R.drawable.ic_log_out);
+        logOutItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
 
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.main_menu, menu);
