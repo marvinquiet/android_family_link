@@ -5,8 +5,12 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.SubMenu;
 import android.view.View;
 import android.widget.TextView;
 
@@ -15,11 +19,12 @@ import com.example.marvin.familylink._UI.adapter.MainFragmentAdapter;
 import com.example.marvin.familylink._UI.pager.CirclePageIndicator;
 import com.melnykov.fab.FloatingActionButton;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends ActionBarActivity {
     private Context context = MainActivity.this;
     private FragmentPagerAdapter adapter;
     private View mainActionBarView;
     private FloatingActionButton floatingActionButton;
+    private final static int FRIEND_ITEM = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,5 +62,24 @@ public class MainActivity extends AppCompatActivity {
         actionBar.setCustomView(mainActionBarView);
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Add Friend Button.
+        SubMenu addFriendMenu = menu.addSubMenu(Menu.NONE, FRIEND_ITEM, Menu.NONE, "");
+
+        MenuItem addFriendItem = addFriendMenu.getItem();
+        addFriendItem.setIcon(R.drawable.ic_search);
+        addFriendItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_menu, menu);
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        return true;
+    }
 
 }
