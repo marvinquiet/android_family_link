@@ -18,9 +18,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.marvin.familylink.R;
+import com.example.marvin.familylink._UI.adapter.FloatingActionButton;
 import com.example.marvin.familylink._UI.adapter.MainFragmentAdapter;
 import com.example.marvin.familylink._UI.pager.CirclePageIndicator;
-import com.example.marvin.familylink._UI.adapter.FloatingActionButton;
 import com.oguzdev.circularfloatingactionmenu.library.FloatingActionMenu;
 import com.oguzdev.circularfloatingactionmenu.library.SubActionButton;
 
@@ -46,13 +46,39 @@ public class MainActivity extends ActionBarActivity {
         CirclePageIndicator indicator = (CirclePageIndicator) findViewById(R.id.indicator);
         indicator.setViewPager(viewPager);
 
+
         // The floating button part
+        initFAB();
+    }
+
+    private void initFAB() {
         final ImageView fabIconNew = new ImageView(this);
         fabIconNew.setImageDrawable(getResources().getDrawable(R.drawable.ic_action_new_light));
         final FloatingActionButton rightLowerButton = new FloatingActionButton.Builder(this)
                 .setContentView(fabIconNew)
                 .setPosition(FloatingActionButton.POSITION_BOTTOM_RIGHT)
                 .build();
+
+//        rightLowerButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                String URL = "https://familyshare-211bb.firebaseio.com/";
+//                Firebase mFireRef_con = new Firebase(URL);
+//                Random random = new Random();
+//                mFireRef_con.child("chat").push().setValue(random.nextInt());
+//                mFireRef_con.child("chat").addValueEventListener(new ValueEventListener() {
+//                    @Override
+//                    public void onDataChange(DataSnapshot dataSnapshot) {
+//                        Toast.makeText(context, "Get message", Toast.LENGTH_SHORT).show();
+//                    }
+//
+//                    @Override
+//                    public void onCancelled(FirebaseError firebaseError) {
+//
+//                    }
+//                });
+//            }
+//        });
 
         SubActionButton.Builder rLSubBuilder = new SubActionButton.Builder(this);
         ImageView rlIcon1 = new ImageView(this);
@@ -75,6 +101,8 @@ public class MainActivity extends ActionBarActivity {
                 .attachTo(rightLowerButton)
                 .build();
 
+
+
         // Listen menu open and close events to animate the button content view
         rightLowerMenu.setStateChangeListener(new FloatingActionMenu.MenuStateChangeListener() {
             @Override
@@ -95,8 +123,6 @@ public class MainActivity extends ActionBarActivity {
                 animation.start();
             }
         });
-
-
     }
 
     private void initActionBar() {

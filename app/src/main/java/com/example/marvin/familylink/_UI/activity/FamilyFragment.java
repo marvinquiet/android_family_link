@@ -8,9 +8,14 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 
 import com.example.marvin.familylink.R;
 import com.example.marvin.familylink._UI._Utils.BLog;
+import com.example.marvin.familylink._UI.adapter.FloatingActionButton;
+import com.oguzdev.circularfloatingactionmenu.library.FloatingActionMenu;
+import com.oguzdev.circularfloatingactionmenu.library.SubActionButton;
 
 
 /**
@@ -18,6 +23,7 @@ import com.example.marvin.familylink._UI._Utils.BLog;
  */
 public class FamilyFragment extends Fragment {
     private static Context context;
+    private static final String URL = "https://familyshare-211bb.firebaseio.com/family";
 
     public FamilyFragment() {
     }
@@ -27,15 +33,6 @@ public class FamilyFragment extends Fragment {
         return familyFragment;
     }
 
-    private boolean isFirstLogin = false;
-
-    // CardType Constants
-    private final static int CARDTYPE_NUM = 2;
-    private final static int CARDTYPE_1 = 0;
-    private final static int CARDTYPE_2 = 1;
-
-
-    // Fetch file cache and show
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         if (BLog.logEnable == true) {
@@ -45,6 +42,7 @@ public class FamilyFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_family, null);
 
         context = getActivity();
+        initView();
 
         return view;
     }
@@ -62,22 +60,82 @@ public class FamilyFragment extends Fragment {
         if (BLog.logEnable == true) {
             BLog.d("###Task Fragment On Resume");
         }
-
-//        isFirstLogin = Constants.SP.getBoolean(Constants.USER_FIRST_LOGIN, false);
-//
-//        try {
-//            fileCache = FileCache.getFileCache(context);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//
-//        unrepliedTasks = fileCache.readTaskObject(Constants.UNREPLIED_TASK_MEMORY_KEY);
-//        sentTasks = fileCache.readTaskObject(Constants.SENT_TASK_MEMORY_KEY);
-//        setCardsView();
-//
-//        refresh();
-//        setSwipeLayoutRefresh(true);
     }
+
+    private void initView() {
+        /*reverse*/
+        int redActionButtonSize = getResources().getDimensionPixelSize(R.dimen.red_action_button_size);
+        int redActionButtonMargin = getResources().getDimensionPixelOffset(R.dimen.action_button_margin+100);
+        int redActionButtonContentSize = getResources().getDimensionPixelSize(R.dimen.red_action_button_content_size);
+        int redActionButtonContentMargin = getResources().getDimensionPixelSize(R.dimen.red_action_button_content_margin);
+        int redActionMenuRadius = getResources().getDimensionPixelSize(R.dimen.red_action_menu_radius);
+        int blueSubActionButtonSize = getResources().getDimensionPixelSize(R.dimen.blue_sub_action_button_size);
+        int blueSubActionButtonContentMargin = getResources().getDimensionPixelSize(R.dimen.blue_sub_action_button_content_margin);
+
+        // The floating button part
+        final ImageView fabIconNew = new ImageView(context);
+        fabIconNew.setImageDrawable(getResources().getDrawable(R.drawable.ic_action_important));
+
+        com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton.LayoutParams starParams11 = new com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton.LayoutParams(redActionButtonSize, redActionButtonSize);
+        starParams11.setMargins(redActionButtonMargin,
+                redActionButtonMargin,
+                redActionButtonMargin,
+                redActionButtonMargin);
+        fabIconNew.setLayoutParams(starParams11);
+
+        com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton.LayoutParams fabIconStarParams11 = new com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton.LayoutParams(redActionButtonContentSize, redActionButtonContentSize);
+        fabIconStarParams11.setMargins(redActionButtonContentMargin,
+                redActionButtonContentMargin,
+                redActionButtonContentMargin,
+                redActionButtonContentMargin);
+
+        final FloatingActionButton rightLowerButton = new FloatingActionButton.Builder(context)
+                .setContentView(fabIconNew,fabIconStarParams11)
+                .setBackgroundDrawable(R.drawable.button_action_red2_selector)
+                .setPosition(FloatingActionButton.POSITION_TOP_LEFT)
+                .setLayoutParams(starParams11)
+                .build();
+
+        SubActionButton.Builder rLSubBuilder = new SubActionButton.Builder(getActivity());
+        rLSubBuilder.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_action_blue_selector));
+        FrameLayout.LayoutParams blueContentParams11 = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT);
+        blueContentParams11.setMargins(blueSubActionButtonContentMargin,
+                blueSubActionButtonContentMargin,
+                blueSubActionButtonContentMargin,
+                blueSubActionButtonContentMargin);
+        rLSubBuilder.setLayoutParams(blueContentParams11);
+        FrameLayout.LayoutParams blueParams11 = new FrameLayout.LayoutParams(blueSubActionButtonSize, blueSubActionButtonSize);
+        rLSubBuilder.setLayoutParams(blueParams11);
+
+        ImageView rlIcon1 = new ImageView(context);
+        ImageView rlIcon2 = new ImageView(context);
+        ImageView rlIcon3 = new ImageView(context);
+        ImageView rlIcon4 = new ImageView(context);
+        ImageView rlIcon5 = new ImageView(context);
+
+        rlIcon1.setImageDrawable(getResources().getDrawable(R.drawable.ic_action_camera));
+        rlIcon2.setImageDrawable(getResources().getDrawable(R.drawable.ic_action_picture));
+        rlIcon3.setImageDrawable(getResources().getDrawable(R.drawable.ic_action_video));
+        rlIcon4.setImageDrawable(getResources().getDrawable(R.drawable.ic_action_location_found));
+        rlIcon5.setImageDrawable(getResources().getDrawable(R.drawable.ic_action_headphones));
+
+        final FloatingActionMenu rightLowerMenu = new FloatingActionMenu.Builder(getActivity())
+                .addSubActionView(rLSubBuilder.setContentView(rlIcon1,blueContentParams11).build())
+                .addSubActionView(rLSubBuilder.setContentView(rlIcon2, blueContentParams11).build())
+                .addSubActionView(rLSubBuilder.setContentView(rlIcon3, blueContentParams11).build())
+                .addSubActionView(rLSubBuilder.setContentView(rlIcon4,blueContentParams11).build())
+                .addSubActionView(rLSubBuilder.setContentView(rlIcon5,blueContentParams11).build())
+                .setRadius(redActionMenuRadius)
+                .setStartAngle(140)
+                .setEndAngle(40)
+                .attachTo(rightLowerButton)
+                .build();
+
+    }
+
+
+
+
 
 //    private List<Card> initQuestionCard(List<Task> tasks) {
 //        List<Card> questionCards = new ArrayList<Card>();

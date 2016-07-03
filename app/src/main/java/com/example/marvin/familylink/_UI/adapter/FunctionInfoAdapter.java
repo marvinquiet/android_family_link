@@ -31,8 +31,8 @@
 //    }
 //
 //    public class FriendSelectHolder {
-//        public TextView mName;
-//        public ImageView mSculpture;
+//        public TextView mContent;
+//        public ImageView mPicture;
 //        public LinearLayout mNewFiendLayout;
 //        public TextView mNewFriendNum;
 //    }
@@ -42,13 +42,13 @@
 //        convertView = inflater.inflate(R.layout.item_friend, parent, false);
 //
 //        holder = new FriendSelectHolder();
-//        holder.mName = (TextView) convertView.findViewById(R.id.friend_name_item);
-//        holder.mSculpture = (ImageView) convertView.findViewById(R.id.friend_sculpture);
+//        holder.mContent = (TextView) convertView.findViewById(R.id.friend_name_item);
+//        holder.mPicture = (ImageView) convertView.findViewById(R.id.friend_sculpture);
 //        holder.mNewFiendLayout = (LinearLayout) convertView.findViewById(R.id.new_friend_layout);
 //        holder.mNewFriendNum = (TextView) convertView.findViewById(R.id.new_friend_num);
 //
-//        holder.mSculpture.setImageDrawable(mContext.getResources().getDrawable(R.drawable.ic_new_friend));
-//        holder.mName.setText(functionList[position]);
+//        holder.mPicture.setImageDrawable(mContext.getResources().getDrawable(R.drawable.ic_new_friend));
+//        holder.mContent.setText(functionList[position]);
 //
 //        if (newFriendNum != 0) {
 //            holder.mNewFiendLayout.setVisibility(View.VISIBLE);

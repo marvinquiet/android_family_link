@@ -87,40 +87,55 @@ public class FloatingActionButton extends FrameLayout {
 
         boolean setDefaultMargin = false;
 
-        int gravity;
-        switch (position) {
-            case POSITION_TOP_CENTER:
-                gravity = Gravity.TOP | Gravity.CENTER_HORIZONTAL;
-                break;
-            case POSITION_TOP_RIGHT:
-                gravity = Gravity.TOP | Gravity.RIGHT;
-                break;
-            case POSITION_RIGHT_CENTER:
-                gravity = Gravity.RIGHT | Gravity.CENTER_VERTICAL;
-                break;
-            case POSITION_BOTTOM_CENTER:
-                gravity = Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL;
-                break;
-            case POSITION_BOTTOM_LEFT:
-                gravity = Gravity.BOTTOM | Gravity.LEFT;
-                break;
-            case POSITION_LEFT_CENTER:
-                gravity = Gravity.LEFT | Gravity.CENTER_VERTICAL;
-                break;
-            case POSITION_TOP_LEFT:
-                gravity = Gravity.TOP | Gravity.LEFT;
-                break;
-            case POSITION_BOTTOM_RIGHT:
-            default:
-                setDefaultMargin = true;
-                gravity = Gravity.BOTTOM | Gravity.RIGHT;
-                break;
-        }
+        int gravity = 0;
+
         if(!systemOverlay) {
             try {
                 LayoutParams lp = (LayoutParams) layoutParams;
-                lp.gravity = gravity;
-                lp.setMargins(0, 0, 30, 80);
+                switch (position) {
+                    case POSITION_TOP_CENTER:
+                        gravity = Gravity.TOP | Gravity.CENTER_HORIZONTAL;
+                        lp.gravity = gravity;
+                        lp.setMargins(0, 0, 30, 80);
+                        break;
+                    case POSITION_TOP_RIGHT:
+                        gravity = Gravity.TOP | Gravity.RIGHT;
+                        lp.gravity = gravity;
+                        lp.setMargins(0, 180, 130, 0);
+                        break;
+                    case POSITION_RIGHT_CENTER:
+                        gravity = Gravity.RIGHT | Gravity.CENTER_VERTICAL;
+                        lp.gravity = gravity;
+                        lp.setMargins(0, 0, 180, -100);
+                        break;
+                    case POSITION_BOTTOM_CENTER:
+                        gravity = Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL;
+                        lp.gravity = gravity;
+                        lp.setMargins(0, 0, 30, 80);
+                        break;
+                    case POSITION_BOTTOM_LEFT:
+                        gravity = Gravity.BOTTOM | Gravity.LEFT;
+                        lp.gravity = gravity;
+                        lp.setMargins(260, 0, 0, 700);
+                        break;
+                    case POSITION_LEFT_CENTER:
+                        gravity = Gravity.LEFT | Gravity.CENTER_VERTICAL;
+                        lp.gravity = gravity;
+                        lp.setMargins(160, 0, 0, 0);
+                        break;
+                    case POSITION_TOP_LEFT:
+                        gravity = Gravity.TOP | Gravity.LEFT;
+                        lp.gravity = gravity;
+                        lp.setMargins(330, 60, 0, 0);
+                        break;
+                    case POSITION_BOTTOM_RIGHT:
+                    default:
+                        setDefaultMargin = true;
+                        gravity = Gravity.BOTTOM | Gravity.RIGHT;
+                        lp.gravity = gravity;
+                        lp.setMargins(0, 0, 30, 80);
+                        break;
+                }
                 setLayoutParams(lp);
             } catch (ClassCastException e) {
                 throw new ClassCastException("layoutParams must be an instance of " +
@@ -130,7 +145,54 @@ public class FloatingActionButton extends FrameLayout {
         else {
             try {
                 WindowManager.LayoutParams lp = (WindowManager.LayoutParams) layoutParams;
-                lp.gravity = gravity;
+                switch (position) {
+                    case POSITION_TOP_CENTER:
+                        gravity = Gravity.TOP | Gravity.CENTER_HORIZONTAL;
+                        lp.gravity = gravity;
+
+                        //lp.setMargins(0, 0, 30, 80);
+                        break;
+                    case POSITION_TOP_RIGHT:
+                        gravity = Gravity.TOP | Gravity.RIGHT;
+                        lp.gravity = gravity;
+                        // lp.setMargins(0, 0, 30, 80);
+                        break;
+                    case POSITION_RIGHT_CENTER:
+                        gravity = Gravity.RIGHT | Gravity.CENTER_VERTICAL;
+                        lp.gravity = gravity;
+                        lp.y = 150;
+                        // lp.setMargins(150, 0, 0, 50);
+                        break;
+                    case POSITION_BOTTOM_CENTER:
+                        gravity = Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL;
+                        lp.gravity = gravity;
+                        //lp.setMargins(0, 0, 30, 80);
+                        break;
+                    case POSITION_BOTTOM_LEFT:
+                        gravity = Gravity.BOTTOM | Gravity.LEFT;
+                        lp.gravity = gravity;
+                        // lp.setMargins(0, 0, 30, 80);
+                        break;
+                    case POSITION_LEFT_CENTER:
+                        gravity = Gravity.LEFT | Gravity.CENTER_VERTICAL;
+                        lp.gravity = gravity;
+                        lp.x = 150;
+                        //lp.setMargins(0, 0, 100, 0);
+                        break;
+                    case POSITION_TOP_LEFT:
+                        gravity = Gravity.TOP | Gravity.LEFT;
+                        lp.gravity = gravity;
+                        //lp.setMargins(0, 0, 30, 80);
+                        break;
+                    case POSITION_BOTTOM_RIGHT:
+                    default:
+                        setDefaultMargin = true;
+                        gravity = Gravity.BOTTOM | Gravity.RIGHT;
+                        lp.gravity = gravity;
+                        //lp.(0, 0, 50, 100);
+                        break;
+                }
+                //lp.gravity = gravity;
                 if(setDefaultMargin) {
                     int margin =  getContext().getResources().getDimensionPixelSize(com.oguzdev.circularfloatingactionmenu.library.R.dimen.action_button_margin);
                     lp.x = margin;
@@ -141,7 +203,7 @@ public class FloatingActionButton extends FrameLayout {
                 throw new ClassCastException("layoutParams must be an instance of " +
                         "WindowManager.LayoutParams, since this FAB is a systemOverlay");
             }
-        }
+        }//else
     }
 
     /**

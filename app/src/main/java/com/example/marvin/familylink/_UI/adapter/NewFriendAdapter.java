@@ -42,7 +42,7 @@
 //
 //    public class FriendSelectHolder {
 //        public TextView mName;
-//        public ImageView mSculpture;
+//        public ImageView mPicture;
 //        public Button mNewFriend;
 //    }
 //
@@ -54,7 +54,7 @@
 //
 //        holder = new FriendSelectHolder();
 //        holder.mName = (TextView) convertView.findViewById(R.id.friend_name_item);
-//        holder.mSculpture = (ImageView) convertView.findViewById(R.id.friend_sculpture);
+//        holder.mPicture = (ImageView) convertView.findViewById(R.id.friend_sculpture);
 //        holder.mNewFriend = (Button) convertView.findViewById(R.id.friend_new_button);
 //        holder.mNewFriend.setVisibility(View.VISIBLE);
 //
@@ -96,13 +96,13 @@
 //
 //                    bitmap = fileCache.getUserPhoto(userId);
 //                    if (bitmap != null) {
-//                        holder.mSculpture.setImageBitmap(fileCache.getUserPhoto(userId));
+//                        holder.mPicture.setImageBitmap(fileCache.getUserPhoto(userId));
 //                    }
 //                } catch (IOException e) {
 //                    e.printStackTrace();
 //                }
 //            } else {
-//                holder.mSculpture.setImageBitmap(bitmap);
+//                holder.mPicture.setImageBitmap(bitmap);
 //            }
 //        }
 //
